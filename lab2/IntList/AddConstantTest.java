@@ -3,8 +3,8 @@ package IntList;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
-
-public class AddConstantTest {2
+//test if commit and push
+public class AddConstantTest {
 
   @Test
   public void testAddConstantOne() {
