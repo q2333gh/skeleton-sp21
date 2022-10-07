@@ -55,7 +55,7 @@ public class TestGuitarString  {
     @Test
     public void testTicCalculations() {
         // Create a GuitarString of frequency 11025, which
-        // is a Deque of length 4. 
+        // is a LinkedListDeque of length 4.
         GuitarString s = new GuitarString(11025);
         s.pluck();
 

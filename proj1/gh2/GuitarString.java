@@ -1,10 +1,10 @@
 package gh2;
 
 // TODO: uncomment the following import once you're ready to start this portion
-// import deque.Deque;
+// import deque.LinkedListDeque;
 // TODO: maybe more imports
 
-//Note: This file will not compile until you complete the Deque implementations
+//Note: This file will not compile until you complete the LinkedListDeque implementations
 public class GuitarString {
     /** Constants. Do not change. In case you're curious, the keyword final
      * means the values cannot be changed at runtime. We'll discuss this and
@@ -14,7 +14,7 @@ public class GuitarString {
 
     /* Buffer for storing sound data. */
     // TODO: uncomment the following line once you're ready to start this portion
-    // private Deque<Double> buffer;
+    // private LinkedListDeque<Double> buffer;
 
     /* Create a guitar string of the given frequency.  */
     public GuitarString(double frequency) {
