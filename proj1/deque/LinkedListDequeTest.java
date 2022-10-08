@@ -200,5 +200,21 @@ public class LinkedListDequeTest {
     /* */
   }
 
+  @Test
+  public void LLDiterateTest() {
+    ArrayList<Integer> al=new ArrayList<>();
+    al.add(5);
+    al.add(7);
+    al.add(12);
+    for (int i = 0; i < 5; i++) {
+      al.add(i);
+    }
+    for (int item:al){
+      System.out.print(item+" ");
+    }
+    System.out.println(al.contains(5));
+    /* */
+  }
+
 
 }

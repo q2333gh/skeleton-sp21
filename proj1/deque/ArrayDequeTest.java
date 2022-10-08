@@ -110,13 +110,13 @@ public class ArrayDequeTest {
   public void removeLastNoShrink() {
     ArrayDeque<Integer> ad=new ArrayDeque<>();
 
-    for (int i = 0; i < 17; i++) {
+    for (int i = 0; i < 5; i++) {
       ad.addLast(i);
     }
-    for (int i = 0; i < 25; i++) {
+    for (int i = 0; i < 22; i++) {
       ad.addFirst(i+100);
     }
-    for (int i = 0; i < 8; i++) {
+    for (int i = 0; i < 9; i++) {
       ad.removeLast();
     }
 
