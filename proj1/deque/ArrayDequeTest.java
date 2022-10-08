@@ -72,6 +72,57 @@ public class ArrayDequeTest {
     System.out.println();
 
   }
+  @Test
+  public void addFirstMore() {
+    ArrayDeque<Integer> ad=new ArrayDeque<>();
 
+    for (int i = 0; i < 17; i++) {
+      ad.addLast(i);
+    }
+    for (int i = 0; i < 25; i++) {
+      ad.addFirst(i+100);
+    }
+//    ad.expand();
+    System.out.println();
+
+  }
+
+  @Test
+  public void removeFirstNoShrink() {
+    ArrayDeque<Integer> ad=new ArrayDeque<>();
+
+    for (int i = 0; i < 17; i++) {
+      ad.addLast(i);
+    }
+    for (int i = 0; i < 25; i++) {
+      ad.addFirst(i+100);
+    }
+    for (int i = 0; i < 24; i++) {
+      ad.removeFirst();
+    }
+
+//    ad.expand();
+    System.out.println();
+
+  }
+
+  @Test
+  public void removeLastNoShrink() {
+    ArrayDeque<Integer> ad=new ArrayDeque<>();
+
+    for (int i = 0; i < 17; i++) {
+      ad.addLast(i);
+    }
+    for (int i = 0; i < 25; i++) {
+      ad.addFirst(i+100);
+    }
+    for (int i = 0; i < 8; i++) {
+      ad.removeLast();
+    }
+
+//    ad.expand();
+    System.out.println();
+
+  }
 
 }
