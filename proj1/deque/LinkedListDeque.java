@@ -21,13 +21,12 @@ public class LinkedListDeque<T> implements Deque<T> {
     size = 0;
   }
 
-  @Override
-  public Node<T> getFirst() {
+
+  private Node<T> getFirst() {
     return headSentinel.succ;
   }
 
-  @Override
-  public Node<T> getLast() {
+  private Node<T> getLast() {
     return tailSentinel.pred;
   }
 

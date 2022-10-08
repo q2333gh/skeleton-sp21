@@ -2,10 +2,6 @@ package deque;
 
 public interface Deque<Item> extends Iterable{
 
-  public Node<Item> getFirst();
-
-  public Node<Item> getLast();
-
   public void addFirst(Item item);
 
   public void addLast(Item item);
