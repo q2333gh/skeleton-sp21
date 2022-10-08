@@ -7,10 +7,10 @@ import java.util.Iterator;
  * @author q2333
  * @date 2022/10/07 10:08
  **/
-public class LinkedListDeque<T> implements Iterable<T> {
+public class LinkedListDeque<T> implements Deque<T> {
 
-  private Node<T> headSentinel;//invariant
-  private Node<T> tailSentinel;//invariant
+  private final Node<T> headSentinel;//invariant
+  private final Node<T> tailSentinel;//invariant
   private int size;
 
   public LinkedListDeque() {
@@ -21,17 +21,19 @@ public class LinkedListDeque<T> implements Iterable<T> {
     size = 0;
   }
 
-  private Node<T> getFirst() {
+  @Override
+  public Node<T> getFirst() {
     return headSentinel.succ;
   }
 
-  private Node<T> getLast() {
+  @Override
+  public Node<T> getLast() {
     return tailSentinel.pred;
   }
 
-
+  @Override
   public void addFirst(T item) {
-    Node<T> node = new Node<T>(item);
+    Node<T> node = new Node<>(item);
     Node<T> oldFirst = getFirst();
 
     getFirst().pred = node;
@@ -42,8 +44,9 @@ public class LinkedListDeque<T> implements Iterable<T> {
     size++;
   }
 
+  @Override
   public void addLast(T item) {
-    Node<T> node = new Node<T>(item);
+    Node<T> node = new Node<>(item);
     Node<T> oldLast = getLast();
 
     tailSentinel.pred = node;
@@ -54,17 +57,17 @@ public class LinkedListDeque<T> implements Iterable<T> {
     size++;
   }
 
+  @Override
   public int size() {
     return size;
   }
 
+  @Override
   public boolean isEmpty() {
-    if (size == 0) {
-      return true;
-    }
-    return false;
+    return size == 0;
   }
 
+  @Override
   public void printDeque() {
     Node<T> p = getFirst();
     for (int i = 0; i < size; i++) {
@@ -74,6 +77,7 @@ public class LinkedListDeque<T> implements Iterable<T> {
     System.out.println();
   }
 
+  @Override
   public T removeFirst() {//确保没有指针指向oldFirst了,不行啊!返回值就要用它,错!
     //返回的是oldFirst.item!!!
     if (size == 0) {
@@ -92,6 +96,7 @@ public class LinkedListDeque<T> implements Iterable<T> {
     return item;
   }
 
+  @Override
   public T removeLast() {
     if (size == 0) {
       return null;
@@ -110,6 +115,7 @@ public class LinkedListDeque<T> implements Iterable<T> {
     return item;
   }
 
+  @Override
   public Node<T> get(int index) {
     //在读取T[index]的时候如何只读?
     Node<T> p = getFirst();
@@ -165,8 +171,6 @@ public class LinkedListDeque<T> implements Iterable<T> {
 
     /**
      * 输入:上层类实例的指针, 输出:节点的next 目前有问题.只能从头迭代 如果指定i位置迭代,指定失败
-     *
-     * @return
      */
     @Override
     public T next() {

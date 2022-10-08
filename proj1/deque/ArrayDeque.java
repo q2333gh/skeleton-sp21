@@ -15,12 +15,11 @@ public class ArrayDeque<T> {
   private int last;
 
 
-
   public ArrayDeque(T item) {
     container = (T[]) new Object[capacity];
     container[0] = item;
-    first =0;
-    last =capacity;
+    first = 0;
+    last = capacity;
     size = 1;
   }
 
@@ -61,25 +60,25 @@ public class ArrayDeque<T> {
 
   private T getFirst() {
 
-    return container[first] ;
+    return container[first];
 
   }
 
   private T getLast() {
-    return container[last] ;
+    return container[last];
   }
 
 
   public void addFirst(T item) {
     CheckIfNeedRecapacity();
-    container[first+1]=item;
+    container[first + 1] = item;
     first++;
     size++;
   }
 
   public void addLast(T item) {
     CheckIfNeedRecapacity();
-    container[last-1]=item;
+    container[last - 1] = item;
     last--;
     size++;
   }
